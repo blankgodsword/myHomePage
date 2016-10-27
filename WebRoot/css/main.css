@@ -1,0 +1,14 @@
+body{
+	padding-top:70px;
+	background-image: url(../images/9e279df7905298221d4a52bdd1ca7bcb0a46d45c.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #E6E6E6;
+}
+.block{
+	border:1px solid #EFEFEF;
+	background-color: #FFF;
+	border-radius: 4px;
+}

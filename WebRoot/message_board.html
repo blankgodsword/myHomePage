@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>我的主页</title>
+		
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/main.css"/>
+		<link type="text/css" rel="stylesheet" href="css/umeditor.min.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			textarea{
+				width:100%;
+				height:150px !important;
+				border-radius: 5px;
+				outline: none;
+				resize: none;
+			}
+			.load_message_button{
+				text-align: center;
+				line-height: 50px;
+			}
+			.load_message_button a:hover{
+				cursor: pointer;
+			}
+			.load_message_block{
+				height: 50px;
+			}
+			.message_area{
+				background-color: #eee;
+				height: 100px;
+			}
+			h5{
+				float:right;
+			}
+			.message_block{
+				height: 200px;
+			}
+			.textarea_div{
+				margin-top: 20px;
+				height: 150px;
+			}
+			.textarea_block{
+				height: 230px; 
+				margin-bottom: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//加载导航条并添加选中样式
+				$("#navbar").load("navbar.html",function(){
+						 $("#message_board_li").addClass("active");
+					});
+				//点击留言板 默认文字消失
+				$("textarea").click(function(){
+					var message = $("textarea").text();
+					if(message == "你可以在这里输入你的留言"){
+							$("textarea").text("");
+					}
+				});
+				$("textarea").blur(function(){
+					var message = $("textarea").text();
+					if(message == ""){
+							$("textarea").text("你可以在这里输入你的留言");
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="navbar">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<ol class="breadcrumb block">
+						<li><a href="main.html">首页</a></li>
+						<li class="active">留言板</li>
+					</ol>
+					<div class="block textarea_block">
+						<div class="form-group col-sm-10 col-sm-offset-1 textarea_div">
+							<textarea class="form-control" maxlength="150">你可以在这里输入你的留言</textarea>
+						</div>
+						<div class="col-sm-2 col-sm-offset-9">
+							<button type="button" class="btn btn-info">发表</button>
+						</div>
+					</div>
+					<div class="block message_block">
+						<div class="col-sm-10 col-sm-offset-1" style="margin-top:20px;">
+							<h4>游客(172.168.2.*):</h4>
+							<div class="message_area">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个网站很有意思!
+							</div>
+							<h5>发表于2016-09-06 16:49:25</h5>
+						</div>
+					</div>
+					<div class="block message_block">
+						<div class="col-sm-10 col-sm-offset-1" style="margin-top:20px;">
+							<h4>游客(172.168.2.*):</h4>
+							<div class="message_area">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;楼上说的对!
+							</div>
+							<h5>发表于2016-09-06 16:55:55</h5>
+						</div>
+					</div>
+					<div class="block load_message_block">
+						<p class="load_message_button"><a>点击查看更多</a></p>
+					</div>
+				</div>
+			<div>
+		</div>
+	</body>
+</html>

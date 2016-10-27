@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>我的视频</title>
+		
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/main.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			h3,h5{
+				text-align:center;
+			}
+			.nav>li.active>a, .nav>li.active>a:hover, .nav>li.active>a:focus {
+				color: #fff;
+				background-color: #428bca;
+			}
+			.right_block{
+				height: 500px;
+				position: relative;
+			}
+			.page{
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+			}
+			/* 通过相对自身偏移50%来实现动态居中 */
+		 	.page_ul{
+				position: relative;
+				left: -50%;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//加载导航条并添加选中样式
+					$("#navbar").load("navbar.html",function(){
+					 	$("#video_li").addClass("active");
+					});
+				})
+		</script>
+	</head>
+	<body>
+		<div id="navbar">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<ol class="breadcrumb block">
+						<li><a href="main.html">首页</a></li>
+						<li class="active">视频</li>
+					</ol>
+					<div class="col-sm-3 block" style="height:500px;">
+						<ul class="nav nav-list" style="margin-top:25px;">
+							<li class="nav-header">视频类型</li>
+							<li class="active"><a href="#">全部</a></li>
+							<li><a href="#">电影</a></li>
+							<li><a href="#">娱乐</a></li>
+							<li><a href="#">动画</a></li>
+							<li><a href="#">游戏</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-8 col-sm-offset-1 block right_block">
+						<h3>我的视频</h3>
+						<div class="col-sm-4">
+							<div class="head_photo">
+								<a href="video_player.html">
+									<div class="thumbnail">
+										<img src="images/9e279df7905298221d4a52bdd1ca7bcb0a46d45c.jpg">
+										<h5>寻龙诀</h5>
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- 分页 -->
+						<div class="page">
+							<ul class="pagination pagination-sm page_ul">
+								<li class="disabled"><a href="#">前一页</a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li class="disabled"><a href="#">后一页</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<div>
+		</div>
+	</body>
+</html>
